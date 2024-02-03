@@ -1,3 +1,5 @@
+// Stopwatch.jsx
+
 import { useEffect, useState } from "react";
 
 export default function Stopwatch() {
@@ -22,7 +24,7 @@ export default function Stopwatch() {
   }, []);
 
   const startTimer = () => {
-    setRunning(true);
+    setRunning((prev) => !prev);
   };
 
   const resetTimer = () => {
@@ -31,18 +33,19 @@ export default function Stopwatch() {
   };
 
   const formatTimer = (elapseTime) => {
-    const minutes = Math.floor(elapseTime / 60);
-    const seconds = elapseTime % 60;
+    let seconds = elapseTime;
+    let minutes = Math.floor(seconds / 60);
+    let sec = seconds % 60;
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    const formattedSeconds = sec < 10 ? `0${sec}` : sec;
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
   return (
     <>
       <h1>Stopwatch</h1>
-      <p>{elapseTime === 0 ? 'Time: 0:00' : `Time: ${formatTimer(elapseTime)}`}</p>
-      <button onClick={running ? resetTimer : startTimer}>{running ? "Stop" : "Start"}</button>
+      <p>{`Time: ${formatTimer(elapseTime)}`}</p>
+      <button onClick={startTimer}>{running ? "Stop" : "Start"}</button>
       <button onClick={resetTimer}>Reset</button>
     </>
   );
