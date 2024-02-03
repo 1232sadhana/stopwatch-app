@@ -38,7 +38,7 @@
     "numTestsKeptInMemory": 0,
     "platform": "linux",
     "pageLoadTimeout": 60000,
-    "port": 36125,
+    "port": 34791,
     "projectId": null,
     "redirectionLimit": 20,
     "reporter": "spec",
@@ -106,7 +106,7 @@
     "cypressInternalEnv": "production"
   },
   "cypressVersion": "13.6.4",
-  "endedTestsAt": "2024-02-03T14:15:08.644Z",
+  "endedTestsAt": "2024-02-03T18:50:07.966Z",
   "osName": "linux",
   "osVersion": "Ubuntu - ",
   "runs": [
@@ -116,61 +116,47 @@
       "reporterStats": {
         "suites": 1,
         "tests": 7,
-        "passes": 0,
+        "passes": 2,
         "pending": 0,
-        "failures": 7,
-        "start": "2024-02-03T14:14:27.495Z",
-        "end": "2024-02-03T14:15:08.651Z",
-        "duration": 41156
+        "failures": 5,
+        "start": "2024-02-03T18:49:38.509Z",
+        "end": "2024-02-03T18:50:07.975Z",
+        "duration": 29466
       },
       "screenshots": [
         {
           "height": 720,
           "name": null,
           "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- verifies the initial state of the stopwatch (failed).png",
-          "takenAt": "2024-02-03T14:14:35.655Z",
-          "width": 1280
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- tests the start functionality of the stopwatch (failed).png",
-          "takenAt": "2024-02-03T14:14:40.472Z",
-          "width": 1280
-        },
-        {
-          "height": 720,
-          "name": null,
-          "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- tests the stop functionality of the stopwatch (failed).png",
-          "takenAt": "2024-02-03T14:14:45.120Z",
+          "takenAt": "2024-02-03T18:49:47.238Z",
           "width": 1280
         },
         {
           "height": 720,
           "name": null,
           "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- tests the reset functionality of the stopwatch (failed).png",
-          "takenAt": "2024-02-03T14:14:49.822Z",
+          "takenAt": "2024-02-03T18:49:52.926Z",
           "width": 1280
         },
         {
           "height": 720,
           "name": null,
           "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- verifies continuous operation of the stopwatch (failed).png",
-          "takenAt": "2024-02-03T14:14:57.504Z",
+          "takenAt": "2024-02-03T18:49:57.779Z",
           "width": 1280
         },
         {
           "height": 720,
           "name": null,
           "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- verifies the time format is correct (failed).png",
-          "takenAt": "2024-02-03T14:15:02.812Z",
+          "takenAt": "2024-02-03T18:50:02.474Z",
           "width": 1280
         },
         {
           "height": 720,
           "name": null,
           "path": "/home/crio-user/workspace/crio-1232sadhana-ME_FE_BUILDOUT_XSTOPWATCH/assessment/cypress/screenshots/spec.cy.js/Stopwatch App -- tests boundary conditions around 59 seconds to 1 minute (failed).png",
-          "takenAt": "2024-02-03T14:15:08.223Z",
+          "takenAt": "2024-02-03T18:50:07.528Z",
           "width": 1280
         }
       ],
@@ -182,13 +168,13 @@
         "relative": "cypress/e2e/spec.cy.js"
       },
       "stats": {
-        "duration": 41160,
-        "endedAt": "2024-02-03T14:15:08.644Z",
-        "failures": 7,
-        "passes": 0,
+        "duration": 29468,
+        "endedAt": "2024-02-03T18:50:07.966Z",
+        "failures": 5,
+        "passes": 2,
         "pending": 0,
         "skipped": 0,
-        "startedAt": "2024-02-03T14:14:27.484Z",
+        "startedAt": "2024-02-03T18:49:38.498Z",
         "suites": 1,
         "tests": 7
       },
@@ -200,7 +186,7 @@
             }
           ],
           "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time: 0:00' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:9:30)",
-          "duration": 4837,
+          "duration": 5471,
           "state": "failed",
           "title": [
             "Stopwatch App",
@@ -210,12 +196,12 @@
         {
           "attempts": [
             {
-              "state": "failed"
+              "state": "passed"
             }
           ],
-          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time:' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:18:7)",
-          "duration": 4533,
-          "state": "failed",
+          "displayError": null,
+          "duration": 372,
+          "state": "passed",
           "title": [
             "Stopwatch App",
             "tests the start functionality of the stopwatch"
@@ -224,12 +210,12 @@
         {
           "attempts": [
             {
-              "state": "failed"
+              "state": "passed"
             }
           ],
-          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time:' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:26:7)",
-          "duration": 4651,
-          "state": "failed",
+          "displayError": null,
+          "duration": 434,
+          "state": "passed",
           "title": [
             "Stopwatch App",
             "tests the stop functionality of the stopwatch"
@@ -242,7 +228,7 @@
             }
           ],
           "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time: 0:00' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:38:30)",
-          "duration": 4737,
+          "duration": 4645,
           "state": "failed",
           "title": [
             "Stopwatch App",
@@ -256,7 +242,7 @@
             }
           ],
           "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time: 0:00' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:49:30)",
-          "duration": 8005,
+          "duration": 4860,
           "state": "failed",
           "title": [
             "Stopwatch App",
@@ -270,7 +256,7 @@
             }
           ],
           "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time: 1:05' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:55:30)",
-          "duration": 4939,
+          "duration": 4890,
           "state": "failed",
           "title": [
             "Stopwatch App",
@@ -284,7 +270,7 @@
             }
           ],
           "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Time: 0:59' but never did.\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:61:30)",
-          "duration": 5097,
+          "duration": 4831,
           "state": "failed",
           "title": [
             "Stopwatch App",
@@ -295,10 +281,10 @@
       "video": null
     }
   ],
-  "startedTestsAt": "2024-02-03T14:14:27.484Z",
-  "totalDuration": 41160,
-  "totalFailed": 7,
-  "totalPassed": 0,
+  "startedTestsAt": "2024-02-03T18:49:38.498Z",
+  "totalDuration": 29468,
+  "totalFailed": 5,
+  "totalPassed": 2,
   "totalPending": 0,
   "totalSkipped": 0,
   "totalSuites": 1,
