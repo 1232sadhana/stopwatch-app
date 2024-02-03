@@ -1,5 +1,3 @@
-// Stopwatch.jsx
-
 import { useEffect, useState } from "react";
 
 export default function Stopwatch() {
@@ -41,6 +39,8 @@ export default function Stopwatch() {
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
+  console.log("elapseTime:", elapseTime); // Log elapseTime for debugging
+
   return (
     <>
       <h1>Stopwatch</h1>
@@ -50,3 +50,5 @@ export default function Stopwatch() {
     </>
   );
 }
+
+
