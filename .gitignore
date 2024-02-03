@@ -1,1 +1,3 @@
 assessment/node_modules/
+.vercel
+node_modules
