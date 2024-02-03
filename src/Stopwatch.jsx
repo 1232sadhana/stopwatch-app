@@ -41,8 +41,9 @@ export default function Stopwatch() {
   return (
     <>
       <h1>Stopwatch</h1>
-      <p>Time: {formatTimer(elapseTime)}</p>
+      <p>{elapseTime === 0 ? 'Time: 0:00' : `Time: ${formatTimer(elapseTime)}`}</p>
       <button onClick={running ? resetTimer : startTimer}>{running ? "Stop" : "Start"}</button>
+      <button onClick={resetTimer}>Reset</button>
     </>
   );
 }
