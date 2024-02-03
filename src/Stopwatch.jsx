@@ -19,7 +19,7 @@ export default function Stopwatch() {
   useEffect(() => {
     // Ensure the initial state is set to 0
     setElapseTime(0);
-  }, []);
+  }, []); // Empty dependency array to run only once on mount
 
   const startTimer = () => {
     setRunning((prev) => !prev);
@@ -39,8 +39,6 @@ export default function Stopwatch() {
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
-  console.log("elapseTime:", elapseTime); // Log elapseTime for debugging
-
   return (
     <>
       <h1>Stopwatch</h1>
@@ -50,5 +48,3 @@ export default function Stopwatch() {
     </>
   );
 }
-
-
