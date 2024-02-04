@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Stopwatch = () => {
   const [running, setRunning] = useState(false);
@@ -18,39 +18,39 @@ const Stopwatch = () => {
     return () => clearInterval(interval);
   }, [running]);
 
-  useEffect(() => {
-    // Ensure the initial state is set to 0
-    setElapsedTime(0);
-  }, []);
-
   const startTimer = () => {
-    setRunning((prev) => !prev);
+    setRunning(true);
+  };
+
+  const stopTimer = () => {
+    setRunning(false);
   };
 
   const resetTimer = () => {
-    setElapsedTime(0);
     setRunning(false);
+    setElapsedTime(0);
   };
 
   const formatTimer = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
-
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-
     return `Time: ${formattedMinutes}:${formattedSeconds}`;
   };
 
   return (
-    <>
+    <div>
       <h1>Stopwatch</h1>
       <p>{formatTimer(elapsedTime)}</p>
-      <button onClick={startTimer}>{running ? "Stop" : "Start"}</button>
+      {running ? (
+        <button onClick={stopTimer}>Stop</button>
+      ) : (
+        <button onClick={startTimer}>Start</button>
+      )}
       <button onClick={resetTimer}>Reset</button>
-    </>
+    </div>
   );
 };
 
 export default Stopwatch;
-
