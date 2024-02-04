@@ -34,11 +34,12 @@ const Stopwatch = () => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
   
-    const formattedMinutes = minutes === 0 ? '0' : minutes < 10 ? `0${minutes}` : minutes;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
   
     return `Time: ${formattedMinutes}:${formattedSeconds}`;
   };
+  
 
   return (
     <div>

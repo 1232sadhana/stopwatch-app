@@ -1,6 +1,6 @@
 describe("Stopwatch App", () => {
   beforeEach(() => {
-    cy.visit("https://stopwatch-app-one.vercel.app/");
+    cy.visit("https://stopwatch-app-pink.vercel.app/");
     cy.clock(); // Freeze time at the start of each test
   });
 
