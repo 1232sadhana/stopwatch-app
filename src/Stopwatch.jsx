@@ -16,13 +16,8 @@ export default function Stopwatch() {
     return () => clearInterval(interval);
   }, [running]);
 
-  useEffect(() => {
-    // Ensure the initial state is set to 0
-    setElapseTime(0);
-  }, []); // Empty dependency array to run only once on mount
-
   const startTimer = () => {
-    setRunning((prev) => !prev);
+    setRunning(true);
   };
 
   const resetTimer = () => {
@@ -31,20 +26,23 @@ export default function Stopwatch() {
   };
 
   const formatTimer = (elapseTime) => {
-    let seconds = elapseTime;
-    let minutes = Math.floor(seconds / 60);
-    let sec = seconds % 60;
+    const minutes = Math.floor(elapseTime / 60);
+    const seconds = elapseTime % 60;
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    const formattedSeconds = sec < 10 ? `0${sec}` : sec;
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
   return (
     <>
       <h1>Stopwatch</h1>
-      <p>{`Time: ${formatTimer(elapseTime)}`}</p>
-      <button onClick={startTimer}>{running ? "Stop" : "Start"}</button>
-      <button onClick={resetTimer}>Reset</button>
+      <p>Time: {formatTimer(elapseTime)}</p>
+      <button onClick={running ? resetTimer : startTimer}>{running ? "Stop" : "Start"}</button>
+      {elapseTime > 0 && !running && (
+        <button onClick={resetTimer} disabled={running}>
+          Reset
+        </button>
+      )}
     </>
   );
 }
