@@ -1,56 +1,52 @@
 import React, { useState, useEffect } from 'react';
 
 const Stopwatch = () => {
-  const [running, setRunning] = useState(false);
-  const [elapsedTime, setElapsedTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [time, setTime] = useState(0);
 
   useEffect(() => {
-    let interval;
-
-    if (running) {
-      interval = setInterval(() => {
-        setElapsedTime((prevTime) => prevTime + 1);
+    let timer;
+    if (isRunning) {
+      timer = setInterval(() => {
+        setTime(prevTime => prevTime + 1);
       }, 1000);
     } else {
-      clearInterval(interval);
+      clearInterval(timer);
     }
+    return () => clearInterval(timer);
+  }, [isRunning]);
 
-    return () => clearInterval(interval);
-  }, [running]);
-
-  const startTimer = () => {
-    setRunning(true);
+  const startStopwatch = () => {
+    setIsRunning(true);
   };
 
-  const stopTimer = () => {
-    setRunning(false);
+  const stopStopwatch = () => {
+    setIsRunning(false);
   };
 
-  const resetTimer = () => {
-    setRunning(false);
-    setElapsedTime(0);
+  const resetStopwatch = () => {
+    setTime(0);
+    setIsRunning(false);
   };
 
-  const formatTimer = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-
-    return `Time: ${formattedMinutes}:${formattedSeconds}`;
+  const formatTime = () => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
   return (
-    <div>
+    <div className="stopwatch">
       <h1>Stopwatch</h1>
-      <p>{formatTimer(elapsedTime)}</p>
-      {running ? (
-        <button onClick={stopTimer}>Stop</button>
-      ) : (
-        <button onClick={startTimer}>Start</button>
-      )}
-      <button onClick={resetTimer}>Reset</button>
+      <div className="time">{formatTime()}</div>
+      <div className="buttons">
+        {!isRunning ? (
+          <button onClick={startStopwatch}>Start</button>
+        ) : (
+          <button onClick={stopStopwatch}>Stop</button>
+        )}
+        <button onClick={resetStopwatch}>Reset</button>
+      </div>
     </div>
   );
 };
