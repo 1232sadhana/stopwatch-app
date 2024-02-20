@@ -8,7 +8,7 @@ const Stopwatch = () => {
     let timer;
     if (isRunning) {
       timer = setInterval(() => {
-        setTime(prevTime => prevTime + 1);
+        setTime((prevTime) => prevTime + 1);
       }, 1000);
     } else {
       clearInterval(timer);
@@ -38,7 +38,7 @@ const Stopwatch = () => {
   return (
     <div className="stopwatch">
       <h1>Stopwatch</h1>
-      <div className="time">{formatTime()}</div>
+      <div style={{ marginBottom: '20px' }}>{formatTime()}</div>
       <div className="buttons">
         <button onClick={isRunning ? stopStopwatch : startStopwatch}>
           {isRunning ? 'Stop' : 'Start'}
